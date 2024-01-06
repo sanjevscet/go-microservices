@@ -6,7 +6,7 @@ import (
 	"github.com/sanjevscet/go-microservices/internal/models"
 )
 
-func (c Client) GetAllCustomer(ctx context.Context, emailAddress string) ([]models.Customer, error) {
+func (c Client) GetAllCustomers(ctx context.Context, emailAddress string) ([]models.Customer, error) {
 	var customers []models.Customer
 
 	result := c.DB.WithContext(ctx).Where(models.Customer{Email: emailAddress}).Find(&customers)
